@@ -1,8 +1,8 @@
 const gameBoard = (() => {
-    const gameBoardArray = [
-        ["","",""],
-        ["","",""],
-        ["","",""]
-    ];
-    return { };
-  })();
+  const gameBoardArray = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+  ];
+  return {};
+})();
