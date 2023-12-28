@@ -13,10 +13,16 @@ const gameBoard = (() => {
   function returnGameBoard() {
     return gameBoardArray
   }
-  return {returnGameBoard,addToGameBoard};
+  return { returnGameBoard, addToGameBoard };
 })();
 
 const gameState = (() => {
+  
+  const GameWon = {
+    state: false,
+    winner: null,
+  };
+
   function checkWin(array) {
 
     for (let i = 0; i < array.length; i++) {
