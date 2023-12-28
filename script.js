@@ -17,8 +17,8 @@ const gameBoard = (() => {
 })();
 
 const gameState = (() => {
-  
-  const GameWon = {
+
+  let gameWon = {
     state: false,
     winner: null,
   };
