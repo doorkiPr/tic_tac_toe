@@ -4,6 +4,11 @@ const gameBoard = (() => {
     ["", "", ""],
     ["", "", ""]
   ];
+
+  function addToGameBoard(playerInput) {
+    // use X to find the right row (array), then use the Y to select the right cell in said row
+    gameBoardArray[playerInput.x].splice(playerInput.y, 1, playerInput.mark)
+  }
   return {};
 })();
 
@@ -33,4 +38,3 @@ const gameState = (() => {
   }
   return {};
 })();
-
