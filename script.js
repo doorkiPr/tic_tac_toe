@@ -53,7 +53,7 @@ const gameState = (() => {
     if (gameWon.state || roundCounter === 9) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     }
-    if (x > 2 || !x || y > 2 || !y) {
+    if (x > 2 || x<0 || y > 2 || y<0) {
       return //don't play the round if the the coordinates are negative or more then 2
     }
 
