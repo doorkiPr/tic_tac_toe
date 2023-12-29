@@ -84,3 +84,12 @@ const GameState = (() => {
 const CreatePlayer = (name, mark) => ({ name, mark });
 const player1 = CreatePlayer("Player1", "X");
 const player2 = CreatePlayer("Player2", "O");
+
+const ScreenController = (()=>{
+  const grid = document.querySelector(".grid")
+  function displayGrid(gameBoardArray){
+    gameBoardArray.forEach(cell => {
+      
+    });
+  }
+});
