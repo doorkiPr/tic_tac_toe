@@ -29,7 +29,7 @@ const gameState = (() => {
 
     for (let i = 0; i < array.length; i++) {
       //check if rows are equals and not empty
-      if (array[i][0] !== "" && array[i][0] === array[i][1] && array[i][2] === array[i][2]) {
+      if (array[i][0] !== "" && array[i][0] === array[i][1] && array[i][1] === array[i][2]) {
         return true
       }
       //check collumns are equals and not empty
@@ -67,7 +67,7 @@ const gameState = (() => {
       console.log(player.name + ' won!')
     }
   }
-  return { playRound };
+  return { playRound,checkWin };
 })();
 
 const createPlayer = (name, mark) => ({ name, mark });
