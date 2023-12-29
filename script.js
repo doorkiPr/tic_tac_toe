@@ -63,3 +63,5 @@ const gameState = (() => {
 })();
 
 const createPlayer = (name, mark) => ({ name, mark }) ;
+const player1 = createPlayer("Player1","X");
+const player2 = createPlayer("Player2","O");
