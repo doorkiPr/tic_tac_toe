@@ -48,15 +48,18 @@ const gameState = (() => {
   }
 
   function playRound(player, x, y, mark) {
-    if (gameWon.state) {
+    if (gameWon.state) {      
       return // dont play the round if there is a winner
     }
 
     gameBoard.addToGameBoard({ x, y, mark });
-
+     console.log(gameBoard.returnGameBoard());
+     
     if (checkWin(gameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
       gameWon.state = true;
       gameWon.winner = player;
+           console.log(player.name + ' won!')
+
     }
   }
   return {playRound};
