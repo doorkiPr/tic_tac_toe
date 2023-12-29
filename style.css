@@ -22,7 +22,7 @@ body {
 .header {
     background-color: var(--white);
     box-shadow: var(--shadow);
-    height: 20vh;
+    height: 10vh;
     border-radius: var(--border-radius);
     text-align: center;
     padding: var(--spacing-button);
@@ -74,6 +74,6 @@ body {
 
 .footer {
     background-color: var(--white);
-    height: 10vh;
+    height: 5vh;
     border-radius: var(--border-radius);
 }
