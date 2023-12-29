@@ -58,6 +58,19 @@ body {
     background-color: var(--grey);
     cursor: pointer;
 }
+.restart{
+    padding: var(--spacing-button);
+    font-size: 1.8rem;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--light-red);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+.restart:hover{
+    filter: brightness(90%)
+}
 
 .footer {
     background-color: var(--white);
