@@ -33,16 +33,17 @@ body {
     background-color: var(--grey);
     height: 80vh;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 .grid {
     height: 500px;
     width: 500px;
     background-color: #050505;
+    box-shadow: var(--shadow);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
