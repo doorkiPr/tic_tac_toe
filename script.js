@@ -22,6 +22,8 @@ const gameState = (() => {
     state: false,
     winner: null,
   };
+  
+  let roundCounter = 0;
 
   function checkWin(array) {
 
