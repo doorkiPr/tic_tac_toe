@@ -59,7 +59,7 @@ const gameState = (() => {
       gameWon.winner = player;
     }
   }
-  return {};
+  return {playRound};
 })();
 
 const createPlayer = (name, mark) => ({ name, mark });
