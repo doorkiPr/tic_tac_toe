@@ -69,7 +69,7 @@ const GameState = (() => {
     handleRound();
     roundCounter++;
 
-    gameBoard.addToGameBoard({ x, y, ...currentPlayer });
+    GameBoard.addToGameBoard({ x, y, ...currentPlayer });
     console.log(GameBoard.returnGameBoard());
 
     if (checkWin(GameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
@@ -86,5 +86,8 @@ const player1 = CreatePlayer("Player1", "X");
 const player2 = CreatePlayer("Player2", "O");
 
 const ScreenController = (()=>{
-  const grid = document.querySelector(".grid")
+  const grid = document.querySelector(".grid");
+  function populateGrid(){
+    
+  };
 });
