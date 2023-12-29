@@ -22,7 +22,7 @@ const gameState = (() => {
     state: false,
     winner: null,
   };
-  
+
   let roundCounter = 0;
 
   function checkWin(array) {
@@ -50,10 +50,11 @@ const gameState = (() => {
   }
 
   function playRound(player, x, y, mark) {
-    if (gameWon.state) {
-      return // dont play the round if there is a winner
+    if (gameWon.state || roundCounter === 9) {
+      return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     }
-
+    
+    roundCounter++
     gameBoard.addToGameBoard({ x, y, mark });
     console.log(gameBoard.returnGameBoard());
 
