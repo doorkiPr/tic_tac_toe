@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
-:root{
+
+:root {
     --white: #fffbfb;
     --grey: #f0eef1;
     --black: #050505;
@@ -10,23 +11,36 @@
     --spacing-button: 15px;
     --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-body{
+
+body {
     margin: 0;
     padding: 0
-    }
-.header{
+}
+
+.header {
     background-color: var(--white);
     box-shadow: var(--shadow);
     height: 20vh;
     border-radius: var(--border-radius);
 }
-.content{
+
+.content {
     background-color: var(--grey);
     height: 80vh;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.footer{
+
+.grid {
+    height: 500px;
+    width: 500px;
+    background-color: #050505;
+}
+
+.footer {
     background-color: var(--white);
     height: 10vh;
     border-radius: var(--border-radius);
