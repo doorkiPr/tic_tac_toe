@@ -49,20 +49,19 @@ const gameState = (() => {
 
   }
 
-  function playRound(player, x, y, mark) {
+  function playRound(player, x, y) {
     if (gameWon.state || roundCounter === 9) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     }
-    
+
     roundCounter++
-    gameBoard.addToGameBoard({ x, y, mark });
+    gameBoard.addToGameBoard({ x, y, ...player });
     console.log(gameBoard.returnGameBoard());
 
     if (checkWin(gameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
       gameWon.state = true;
       gameWon.winner = player;
       console.log(player.name + ' won!')
-
     }
   }
   return { playRound };
