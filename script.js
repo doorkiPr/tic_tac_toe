@@ -1,4 +1,4 @@
-const gameBoard = (() => {
+const GameBoard = (() => {
   const gameBoardArray = [
     ["", "", ""],
     ["", "", ""],
@@ -18,7 +18,7 @@ const gameBoard = (() => {
 
 
 
-const gameState = (() => {
+const GameState = (() => {
   let currentPlayer = player1;
   let gameWon = {
     state: false,
@@ -70,9 +70,9 @@ const gameState = (() => {
     roundCounter++;
 
     gameBoard.addToGameBoard({ x, y, ...currentPlayer });
-    console.log(gameBoard.returnGameBoard());
+    console.log(GameBoard.returnGameBoard());
 
-    if (checkWin(gameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
+    if (checkWin(GameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
       gameWon.state = true;
       gameWon.winner = currentPlayer;
       console.log(currentPlayer.name + ' won!')
@@ -81,6 +81,6 @@ const gameState = (() => {
   return { playRound };
 })();
 
-const createPlayer = (name, mark) => ({ name, mark });
-const player1 = createPlayer("Player1", "X");
-const player2 = createPlayer("Player2", "O");
+const CreatePlayer = (name, mark) => ({ name, mark });
+const player1 = CreatePlayer("Player1", "X");
+const player2 = CreatePlayer("Player2", "O");
