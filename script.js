@@ -31,6 +31,9 @@ const gameState = (() => {
     if (roundCounter % 2 === 0) {
       currentPlayer = player2;
     }
+    else{
+      currentPlayer = player1;
+    }
   }
   function checkWin(array) {
     for (let i = 0; i < array.length; i++) {
