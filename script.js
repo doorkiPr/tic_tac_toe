@@ -16,8 +16,10 @@ const gameBoard = (() => {
   return { returnGameBoard, addToGameBoard };
 })();
 
-const gameState = (() => {
 
+
+const gameState = (() => {
+  let currentPlayer = player1;
   let gameWon = {
     state: false,
     winner: null,
@@ -25,8 +27,12 @@ const gameState = (() => {
 
   let roundCounter = 0;
 
+  function handleRound() {
+    if (roundCounter % 2 === 0) {
+      currentPlayer = player2;
+    }
+  }
   function checkWin(array) {
-
     for (let i = 0; i < array.length; i++) {
       //check if rows are equals and not empty
       if (array[i][0] !== "" && array[i][0] === array[i][1] && array[i][2] === array[i][2]) {
@@ -53,7 +59,7 @@ const gameState = (() => {
     if (gameWon.state || roundCounter === 9) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     }
-    if (x > 2 || x<0 || y > 2 || y<0) {
+    if (x > 2 || x < 0 || y > 2 || y < 0) {
       return //don't play the round if the the coordinates are negative or more then 2
     }
 
