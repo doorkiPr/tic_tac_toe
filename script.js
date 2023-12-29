@@ -25,7 +25,7 @@ const gameState = (() => {
     winner: null,
   };
 
-  let roundCounter = 0;
+  let roundCounter = 1;
 
   function handleRound() {
     if (roundCounter % 2 === 0) {
