@@ -62,6 +62,6 @@ const gameState = (() => {
   return {};
 })();
 
-const createPlayer = (name, mark) => ({ name, mark }) ;
-const player1 = createPlayer("Player1","X");
-const player2 = createPlayer("Player2","O");
+const createPlayer = (name, mark) => ({ name, mark });
+const player1 = createPlayer("Player1", "X");
+const player2 = createPlayer("Player2", "O");
