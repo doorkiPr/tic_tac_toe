@@ -47,8 +47,8 @@ const gameState = (() => {
 
   }
 
-  function playRound(player, { x, y, mark }) {
-    if (gameWon) {
+  function playRound(player, x, y, mark) {
+    if (gameWon.state) {
       return // dont play the round if there is a winner
     }
 
@@ -58,7 +58,6 @@ const gameState = (() => {
       gameWon.state = true;
       gameWon.winner = player;
     }
-
   }
   return {};
 })();
