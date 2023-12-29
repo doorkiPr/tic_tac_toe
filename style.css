@@ -38,8 +38,19 @@ body {
     height: 500px;
     width: 500px;
     background-color: #050505;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:2px
 }
-
+.cell{
+    text-align: center;
+    background-color: var(--white);
+}
+.cell:hover{
+    background-color: var(--grey);
+    cursor: pointer;
+}
 .footer {
     background-color: var(--white);
     height: 10vh;
