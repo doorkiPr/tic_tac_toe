@@ -87,9 +87,4 @@ const player2 = CreatePlayer("Player2", "O");
 
 const ScreenController = (()=>{
   const grid = document.querySelector(".grid")
-  function displayGrid(gameBoardArray){
-    gameBoardArray.forEach(cell => {
-      
-    });
-  }
 });
