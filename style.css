@@ -39,9 +39,11 @@ body {
     align-items: center;
     gap: 15px;
 }
-.turn{
+
+.turn {
     font-size: 1.8rem;
 }
+
 .grid {
     height: 500px;
     width: 500px;
@@ -65,7 +67,8 @@ body {
     background-color: var(--grey);
     cursor: pointer;
 }
-.restart{
+
+.restart {
     padding: var(--spacing-button);
     font-size: 1.8rem;
     border-radius: 8px;
@@ -75,7 +78,8 @@ body {
     font-family: inherit;
     font-weight: 600;
 }
-.restart:hover{
+
+.restart:hover {
     filter: brightness(90%)
 }
 
