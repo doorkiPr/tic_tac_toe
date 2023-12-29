@@ -31,7 +31,7 @@ const gameState = (() => {
     if (roundCounter % 2 === 0) {
       currentPlayer = player2;
     }
-    else{
+    else {
       currentPlayer = player1;
     }
   }
@@ -61,12 +61,14 @@ const gameState = (() => {
   function playRound(x, y) {
     if (gameWon.state || roundCounter === 9) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
-    }
+    };
     if (x > 2 || x < 0 || y > 2 || y < 0) {
       return //don't play the round if the the coordinates are negative or more then 2
-    }
+    };
 
-    roundCounter++
+    handleRound();
+    roundCounter++;
+
     gameBoard.addToGameBoard({ x, y, ...currentPlayer });
     console.log(gameBoard.returnGameBoard());
 
