@@ -67,7 +67,9 @@ const GameState = (() => {
     if (x > 2 || x < 0 || y > 2 || y < 0) {
       return //don't play the round if the the coordinates are negative or more then 2
     };
-
+    if(GameBoard.returnGameBoard()[x][y]){
+      return // don'nt play if there's a mark in these coordiantes
+    }
     handleRound();
     roundCounter++;
 
@@ -90,7 +92,7 @@ const ScreenController = (() => {
     console.log(e.target);
     GameState.playRound(e.target.getAttribute("data-x"), e.target.getAttribute("data-y"));
     updateScreen(GameBoard.returnGameBoard());
-    
+
   });
 
   function updateScreen(array) {
