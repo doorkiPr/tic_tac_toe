@@ -84,5 +84,8 @@ const GameState = (() => {
 })();
 
 const ScreenController = (()=>{
-  const grid = document.querySelector(".grid")
+  const grid = document.querySelector(".grid");
+  function updateScreen(array) {
+    
+  }
 });
