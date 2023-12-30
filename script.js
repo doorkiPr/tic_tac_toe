@@ -87,7 +87,7 @@ const GameState = (() => {
       console.log(currentPlayer.name + ' won!')
     }
   }
-  return { playRound };
+  return { playRound,returnGameWon,returnRound };
 })();
 
 const ScreenController = (() => {
