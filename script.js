@@ -97,6 +97,7 @@ const ScreenController = (() => {
     console.log(e.target);
     GameState.playRound(e.target.getAttribute("data-x"), e.target.getAttribute("data-y"));
     updateScreen(GameBoard.returnGameBoard());
+    displayInformation(GameState.returnGameWon(),GameState.returnRound())
 
   });
 
@@ -110,6 +111,16 @@ const ScreenController = (() => {
 
       })
     });
+  }
+
+  function displayInformation(gameWon,round) {
+      const textBox = document.querySelector(".turn");
+      if(gameWon.state){
+        textBox.textContent = `${gameWon.winner.name} Won ! Using ${gameWon.winner.mark}`;
+      }
+      if(round === 10){
+        textBox.textContent = " It's A Draw ! Please restart";
+      }
   }
 
   return { updateScreen }
