@@ -115,6 +115,7 @@ const ScreenController = (() => {
 
   function displayInformation(gameWon,round) {
       const textBox = document.querySelector(".turn");
+      textBox.textContent = `${round.currentPlayer.name} just played ${round.currentPlayer.mark} ! `;
       if(gameWon.state){
         textBox.textContent = `${gameWon.winner.name} Won ! Using ${gameWon.winner.mark}`;
       }
