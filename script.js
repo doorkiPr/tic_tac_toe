@@ -89,7 +89,8 @@ const ScreenController = (() => {
   function updateScreen(array) { 
     array.forEach((element,xIndex) => {
       element.forEach((square,yIndex) => { //itterate through each element of our 2d array
-        console.log(square,xIndex,yIndex)
+        console.log(square,xIndex,yIndex);
+        console.log(document.querySelector(`[data-x='${xIndex}'][data-y='${yIndex}']`));
       })
     });
   }
