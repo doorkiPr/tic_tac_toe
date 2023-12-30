@@ -61,7 +61,7 @@ const GameState = (() => {
   }
 
   function playRound(x, y) {
-    if (gameWon.state || roundCounter === 9) {
+    if (gameWon.state || roundCounter === 10) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     };
     if (x > 2 || x < 0 || y > 2 || y < 0) {
