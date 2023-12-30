@@ -83,10 +83,10 @@ const GameState = (() => {
   return { playRound };
 })();
 
-const ScreenController = (()=>{
+const ScreenController = (() => {
   const grid = document.querySelector(".grid");
   const cellArray = Array.from(grid.children());
   function updateScreen(array) {
-    
+
   }
 });
