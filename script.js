@@ -85,11 +85,12 @@ const GameState = (() => {
 
 const ScreenController = (() => {
   const grid = document.querySelector(".grid");
-  function updateScreen(array) { 
-    array.forEach((element,xIndex) => {
-      element.forEach((square,yIndex) => { //itterate through each element of our 2d array
-        console.log(square,xIndex,yIndex);
-        console.log(document.querySelector(`[data-x='${xIndex}'][data-y='${yIndex}']`));
+  function updateScreen(array) {
+    array.forEach((element, xIndex) => {
+      element.forEach((square, yIndex) => { //itterate through each element of our 2d array
+
+        const domCell = document.querySelector(`[data-x='${xIndex}'][data-y='${yIndex}']`);
+        domCell.textContent=square;
       })
     });
   }
