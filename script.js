@@ -21,9 +21,9 @@ const player1 = CreatePlayer("Player1", "X");
 const player2 = CreatePlayer("Player2", "O");
 
 const GameState = (() => {
-  let round ={
-    currentPlayer : player1,
-    counter : 1
+  let round = {
+    currentPlayer: player1,
+    counter: 1
   }
   let gameWon = {
     state: false,
@@ -37,7 +37,7 @@ const GameState = (() => {
   }
   function handleRound() {
     if (round.counter % 2 === 0) {
-      round.currentPlayer  = player2;
+      round.currentPlayer = player2;
     }
     else {
       round.currentPlayer = player1;
@@ -87,7 +87,7 @@ const GameState = (() => {
       gameWon.winner = round.currentPlayer;
     }
   }
-  return { playRound,returnGameWon,returnRound };
+  return { playRound, returnGameWon, returnRound };
 })();
 
 const ScreenController = (() => {
@@ -97,7 +97,7 @@ const ScreenController = (() => {
     console.log(e.target);
     GameState.playRound(e.target.getAttribute("data-x"), e.target.getAttribute("data-y"));
     updateScreen(GameBoard.returnGameBoard());
-    displayInformation(GameState.returnGameWon(),GameState.returnRound())
+    displayInformation(GameState.returnGameWon(), GameState.returnRound())
 
   });
 
@@ -113,17 +113,16 @@ const ScreenController = (() => {
     });
   }
 
-  function displayInformation(gameWon,round) {
-      const textBox = document.querySelector(".turn");
-      textBox.textContent = `${round.currentPlayer.name} just played ${round.currentPlayer.mark} ! `;
-      if(gameWon.state){
-        textBox.textContent = `${gameWon.winner.name} Won ! Using ${gameWon.winner.mark}`;
-      }
-      if(round.counter === 10){
-        textBox.textContent = " It's A Draw ! Please restart";
-      }
+  function displayInformation(gameWon, round) {
+    const textBox = document.querySelector(".turn");
+    textBox.textContent = `${round.currentPlayer.name} just played ${round.currentPlayer.mark} ! `;
+    if (gameWon.state) {
+      textBox.textContent = `${gameWon.winner.name} Won ! Using ${gameWon.winner.mark}`;
+    }
+    if (round.counter === 10) {
+      textBox.textContent = " It's A Draw ! Please restart";
+    }
   }
-
   return { updateScreen }
 
 })();
