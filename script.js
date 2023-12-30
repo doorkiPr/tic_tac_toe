@@ -40,7 +40,7 @@ const GameState = (() => {
   function checkWin(array) {
     for (let i = 0; i < array.length; i++) {
       //check if rows are equals and not empty
-      if (array[i][0] !== "" && array[i][0] === array[i][1] && array[i][2] === array[i][2]) {
+      if (array[i][0] !== "" && array[i][0] === array[i][1] && array[i][1] === array[i][2]) {
         return true
       }
       //check collumns are equals and not empty
