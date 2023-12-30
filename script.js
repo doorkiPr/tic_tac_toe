@@ -98,5 +98,6 @@ const ScreenController = (() => {
     });
   }
 
+  return { updateScreen }
 
 })();
