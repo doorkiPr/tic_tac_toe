@@ -29,6 +29,9 @@ const GameState = (() => {
 
   let roundCounter = 1;
 
+  function returnRound() {
+    return roundCounter;
+  }
   function handleRound() {
     if (roundCounter % 2 === 0) {
       currentPlayer = player2;
@@ -67,7 +70,7 @@ const GameState = (() => {
     if (x > 2 || x < 0 || y > 2 || y < 0) {
       return //don't play the round if the the coordinates are negative or more then 2
     };
-    if(GameBoard.returnGameBoard()[x][y]){
+    if (GameBoard.returnGameBoard()[x][y]) {
       return // don'nt play if there's a mark in these coordiantes
     }
     handleRound();
