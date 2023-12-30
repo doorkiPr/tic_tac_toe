@@ -21,7 +21,10 @@ const player1 = CreatePlayer("Player1", "X");
 const player2 = CreatePlayer("Player2", "O");
 
 const GameState = (() => {
-  let currentPlayer = player1;
+  let round ={
+    currentPlayer : player1,
+    counter : 1
+  }
   let gameWon = {
     state: false,
     winner: null,
@@ -29,17 +32,15 @@ const GameState = (() => {
   function returnGameWon() {
     return gameWon
   }
-  let roundCounter = 1;
-
   function returnRound() {
-    return roundCounter;
+    return round;
   }
   function handleRound() {
-    if (roundCounter % 2 === 0) {
-      currentPlayer = player2;
+    if (round.counter % 2 === 0) {
+      round.currentPlayer  = player2;
     }
     else {
-      currentPlayer = player1;
+      round.currentPlayer = player1;
     }
   }
   function checkWin(array) {
@@ -66,7 +67,7 @@ const GameState = (() => {
   }
 
   function playRound(x, y) {
-    if (gameWon.state || roundCounter === 10) {
+    if (gameWon.state || round.counter === 10) {
       return // dont play the round if there is a winner or if it's a tie (9 rounds without winner)
     };
     if (x > 2 || x < 0 || y > 2 || y < 0) {
@@ -76,15 +77,14 @@ const GameState = (() => {
       return // don'nt play if there's a mark in these coordiantes
     }
     handleRound();
-    roundCounter++;
+    round.counter++;
 
-    GameBoard.addToGameBoard({ x, y, ...currentPlayer });
+    GameBoard.addToGameBoard({ x, y, ...round.currentPlayer });
     console.log(GameBoard.returnGameBoard());
 
     if (checkWin(GameBoard.returnGameBoard())) { //if theres a winner change gameWon state to true and set the winner to the player who just played the round 
       gameWon.state = true;
-      gameWon.winner = currentPlayer;
-      console.log(currentPlayer.name + ' won!')
+      gameWon.winner = round.currentPlayer;
     }
   }
   return { playRound,returnGameWon,returnRound };
@@ -118,7 +118,7 @@ const ScreenController = (() => {
       if(gameWon.state){
         textBox.textContent = `${gameWon.winner.name} Won ! Using ${gameWon.winner.mark}`;
       }
-      if(round === 10){
+      if(round.counter === 10){
         textBox.textContent = " It's A Draw ! Please restart";
       }
   }
