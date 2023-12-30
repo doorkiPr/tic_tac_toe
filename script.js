@@ -26,7 +26,9 @@ const GameState = (() => {
     state: false,
     winner: null,
   };
-
+  function returnGameWon() {
+    return gameWon
+  }
   let roundCounter = 1;
 
   function returnRound() {
