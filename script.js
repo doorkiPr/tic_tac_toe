@@ -16,7 +16,9 @@ const GameBoard = (() => {
   return { returnGameBoard, addToGameBoard };
 })();
 
-
+const CreatePlayer = (name, mark) => ({ name, mark });
+const player1 = CreatePlayer("Player1", "X");
+const player2 = CreatePlayer("Player2", "O");
 
 const GameState = (() => {
   let currentPlayer = player1;
@@ -81,13 +83,6 @@ const GameState = (() => {
   return { playRound };
 })();
 
-const CreatePlayer = (name, mark) => ({ name, mark });
-const player1 = CreatePlayer("Player1", "X");
-const player2 = CreatePlayer("Player2", "O");
-
 const ScreenController = (()=>{
-  const grid = document.querySelector(".grid");
-  function populateGrid(){
-    
-  };
+  const grid = document.querySelector(".grid")
 });
