@@ -85,7 +85,11 @@ const GameState = (() => {
 
 const ScreenController = (() => {
   const grid = document.querySelector(".grid");
-
+  grid.addEventListener("click",(e)=>{
+      console.log(e.target);
+      GameState.playRound(e.target.getAttribute("data-x"),e.target.getAttribute("data-y"));
+      updateScreen(GameBoard.returnGameBoard());
+  })
   function updateScreen(array) {
 
     array.forEach((element, xIndex) => {
