@@ -86,7 +86,11 @@ const GameState = (() => {
 const ScreenController = (() => {
   const grid = document.querySelector(".grid");
   const cellArray = Array.from(grid.children());
-  function updateScreen(array) {
-
+  function updateScreen(array) { 
+    array.forEach((element,xIndex) => {
+      element.forEach((square,yIndex) => { //itterate through each element of our 2d array
+        console.log(square,xIndex,yIndex)
+      })
+    });
   }
 });
